@@ -97,7 +97,7 @@ func main() {
 	t := os.Getenv("HULKMAXPROCS")
 	maxproc, err := strconv.Atoi(t)
 	if err != nil {
-		maxproc = 5000
+		maxproc = 10000
 	}
 
 	u, err := url.Parse(site)
@@ -142,11 +142,11 @@ func main() {
 			}
 			switch <-ss {
 			case callExitOnErr:
-				// atomic.AddInt32(&cur, -1)
+				atomic.AddInt32(&cur, -1)
 				err++
 			case callExitOnTooManyFiles:
-				// atomic.AddInt32(&cur, -1)
-				// maxproc--
+				atomic.AddInt32(&cur, -1)
+				maxproc--
 			case callGotOk:
 				sent++
 			case targetComplete:
