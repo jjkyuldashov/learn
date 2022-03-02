@@ -93,7 +93,7 @@ func main() {
 
 	// skat city
 	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/?username=2305&password=GBRHBTYH&lang=en", "Destination site.")
-	flag.StringVar(&site, "site", "http://213.230.120.147", "Destination site.")
+	flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/prefetch", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
