@@ -92,8 +92,9 @@ func main() {
 	// flag.StringVar(&site, "site", "https://217.30.171.176:3443/api/driver-app/1.0/dict/countries", "Destination site.")
 
 	// skat city
-	flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/?username=2305&password=GBRHBTYH&lang=en", "Destination site.")
+	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/?username=2305&password=GBRHBTYH&lang=en", "Destination site.")
 	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/prefetch", "Destination site.")
+	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/profile", "Destination site.")
 
 	//arzoni bizda
 	// flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
