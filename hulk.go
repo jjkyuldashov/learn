@@ -99,7 +99,7 @@ func main() {
 	// biznes
 	// flag.StringVar(&site, "site", "https://62.209.144.97:8090/driver_candidate_api/v1/settings", "Destination site.")
 
-	flag.StringVar(&site, "site", "http://204.134.217.70", "Destination site.")
+	flag.StringVar(&site, "site", "https://ru.dsr-corporation.com", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
