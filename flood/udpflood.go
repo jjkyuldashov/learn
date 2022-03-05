@@ -10,7 +10,7 @@ import (
 
 var (
 	_host    = flag.String("h", "195.158.3.34", "Specify Host")
-	_port    = flag.Int("p", 80, "Specify Port")
+	_port    = flag.Int("p", 8129, "Specify Port")
 	_threads = flag.Int("t", 100, "Specify threads")
 	_size    = flag.Int("s", 5000, "Packet Size")
 )
