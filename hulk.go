@@ -189,7 +189,7 @@ func main() {
 				err++
 			case callExitOnTooManyFiles:
 				atomic.AddInt32(&cur, -1)
-				maxproc--
+				// maxproc--
 			case callGotOk:
 				sent++
 			case targetComplete:
