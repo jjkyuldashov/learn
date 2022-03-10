@@ -91,10 +91,10 @@ func main() {
 	// flag.StringVar(&site, "site", "http://213.230.120.147", "Destination site.")
 
 	//arzoni bizda
-	flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
+	// flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
 
 	//hemis adu
-	// flag.StringVar(&site, "site", "https://hemis.adu.uz/dashboard/login", "Destination site.")
+	flag.StringVar(&site, "site", "https://hemis.adu.uz", "Destination site.")
 
 	// biznes
 	// flag.StringVar(&site, "site", "https://62.209.144.97:8090/driver_candidate_api/v1/settings", "Destination site.")
