@@ -89,12 +89,13 @@ func main() {
 	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/prefetch", "Destination site.")
 	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/profile", "Destination site.")
 	// flag.StringVar(&site, "site", "http://213.230.120.147", "Destination site.")
+	flag.StringVar(&site, "site", "https://elmakon.uz/elmakon", "Destination site.")
 
 	//arzoni bizda
 	// flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
 
 	//hemis adu
-	flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
+	// flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
 
 	// biznes
 	// flag.StringVar(&site, "site", "https://62.209.144.97:8090/driver_candidate_api/v1/settings", "Destination site.")
