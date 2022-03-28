@@ -83,7 +83,8 @@ func main() {
 	// flag.StringVar(&site, "site", "http://213.230.120.147", "Destination site.")
 	// flag.StringVar(&site, "site", "https://87.237.238.27:8089/driver_candidate_api/v1/settings", "Destination site.")
 	// flag.StringVar(&site, "site", "https://217.30.171.176:3443/api/driver-app/1.0/dict/countries", "Destination site.")
-	flag.StringVar(&site, "site", "https://office.uz.taxi:3443/api/driver-app/1.0/dict/countries", "Destination site.")
+	// flag.StringVar(&site, "site", "https://office.uz.taxi:3443/api/driver-app/1.0/dict/countries", "Destination site.")
+	flag.StringVar(&site, "site", "http://95.46.80.15", "Destination site.")
 
 	// skat city
 	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/?username=2305&password=GBRHBTYH&lang=en", "Destination site.")
@@ -111,7 +112,7 @@ func main() {
 	t := os.Getenv("HULKMAXPROCS")
 	maxproc, err := strconv.Atoi(t)
 	if err != nil {
-		maxproc = 5000
+		maxproc = 1000
 	}
 
 	u, err := url.Parse(site)
