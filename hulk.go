@@ -226,12 +226,12 @@ func httpcall(url string, host string, data string, headers arrayFlags, s chan u
 		var q *http.Request
 		var err error
 
-		// if data == "" {
-		// 	q, err = http.NewRequest("GET", url+param_joiner+buildblock(rand.Intn(7)+3)+"="+buildblock(rand.Intn(7)+3), nil)
-		// 	// q, err = http.NewRequest("GET", url+param_joiner+"username="+buildblock(rand.Intn(7)+3)+"password="+buildblock(rand.Intn(7)+3), nil)
-		// } else {
-		q, err = http.NewRequest("POST", url, strings.NewReader(data))
-		// }
+		if data == "" {
+			q, err = http.NewRequest("GET", url+param_joiner+buildblock(rand.Intn(7)+3)+"="+buildblock(rand.Intn(7)+3), nil)
+			// q, err = http.NewRequest("GET", url+param_joiner+"username="+buildblock(rand.Intn(7)+3)+"password="+buildblock(rand.Intn(7)+3), nil)
+		} else {
+			q, err = http.NewRequest("POST", url, strings.NewReader(data))
+		}
 
 		if err != nil {
 			s <- callExitOnErr
