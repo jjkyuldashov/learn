@@ -9,10 +9,10 @@ import (
 )
 
 var (
-	_host    = flag.String("h", "195.158.3.34", "Specify Host")
-	_port    = flag.Int("p", 8129, "Specify Port")
-	_threads = flag.Int("t", 100, "Specify threads")
-	_size    = flag.Int("s", 5000, "Packet Size")
+	_host    = flag.String("h", "213.230.124.250", "Specify Host")
+	_port    = flag.Int("p", 443, "Specify Port")
+	_threads = flag.Int("t", 10, "Specify threads")
+	_size    = flag.Int("s", 100, "Packet Size")
 )
 
 // 213.230.99.94
