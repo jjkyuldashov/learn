@@ -84,7 +84,7 @@ func main() {
 	// flag.StringVar(&site, "site", "https://87.237.238.27:8089/driver_candidate_api/v1/settings", "Destination site.")
 	// flag.StringVar(&site, "site", "https://217.30.171.176:3443/api/driver-app/1.0/dict/countries", "Destination site.")
 	// flag.StringVar(&site, "site", "https://office.uz.taxi:3443/api/driver-app/1.0/dict/countries", "Destination site.")
-	flag.StringVar(&site, "site", "https://api.mytaxi.uz/v1/register/998916675985", "Destination site.")
+	// flag.StringVar(&site, "site", "https://api.mytaxi.uz/v1/register/998916675985", "Destination site.")
 
 	// skat city
 	// flag.StringVar(&site, "site", "http://213.230.120.147/cabinet/?username=2305&password=GBRHBTYH&lang=en", "Destination site.")
@@ -94,7 +94,7 @@ func main() {
 	// flag.StringVar(&site, "site", "https://elmakon.uz/elmakon", "Destination site.")
 
 	//arzoni bizda
-	// flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
+	flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
 
 	//hemis adu
 	// flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
@@ -112,7 +112,7 @@ func main() {
 	t := os.Getenv("HULKMAXPROCS")
 	maxproc, err := strconv.Atoi(t)
 	if err != nil {
-		maxproc = 10000
+		maxproc = 5000
 	}
 
 	u, err := url.Parse(site)
