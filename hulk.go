@@ -94,7 +94,7 @@ func main() {
 	// flag.StringVar(&site, "site", "https://elmakon.uz/elmakon", "Destination site.")
 
 	//arzoni bizda
-	flag.StringVar(&site, "site", "https://relay.platform.taximaster.ru:8089/taxi_caller_api/1.10/start_auth?name=Jasurbek&phone=%2B998945667725", "Destination site.")
+	flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
 
 	//hemis adu
 	// flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
