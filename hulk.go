@@ -94,7 +94,7 @@ func main() {
 	// flag.StringVar(&site, "site", "https://elmakon.uz/elmakon", "Destination site.")
 
 	//arzoni bizda
-	// flag.StringVar(&site, "site", "https://213.230.124.250:8089/driver_candidate_api/v1/settings", "Destination site.")
+	flag.StringVar(&site, "site", "https://213.230.124.250:3000/driver_candidate_api/v1/settings", "Destination site.")
 
 	//hemis adu
 	// flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
@@ -103,7 +103,7 @@ func main() {
 	// flag.StringVar(&site, "site", "https://62.209.144.97:8090/driver_candidate_api/v1/settings", "Destination site.")
 
 	// flag.StringVar(&site, "site", "https://ru.dsr-corporation.com", "Destination site.")
-	flag.StringVar(&site, "site", "https://student.adu.uz", "Destination site.")
+	// flag.StringVar(&site, "site", "https://student.adu.uz", "Destination site.")
 	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
 	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
