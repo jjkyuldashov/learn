@@ -214,14 +214,14 @@ func main() {
 func httpcall(url string, host string, data string, headers arrayFlags, s chan uint8) {
 	atomic.AddInt32(&cur, 1)
 
-	var param_joiner string
-	var client = new(http.Client)
+	// var param_joiner string
+	// var client = new(http.Client)
 
-	if strings.ContainsRune(url, '?') {
-		param_joiner = "&"
-	} else {
-		param_joiner = "?"
-	}
+	// if strings.ContainsRune(url, '?') {
+	// 	param_joiner = "&"
+	// } else {
+	// 	param_joiner = "?"
+	// }
 
 	for {
 		var q *http.Request
