@@ -95,7 +95,7 @@ func main() {
 
 	//arzoni bizda
 	// flag.StringVar(&site, "site", "https://213.230.124.250:3000/driver_candidate_api/v1/settings", "Destination site.")
-	flag.StringVar(&site, "site", "https://login.gov.il/nidp/GOV/vendor/asn1x509-1.0.js", "Destination site.")
+	flag.StringVar(&site, "site", "https://147.237.0.206", "Destination site.")
 
 	//hemis adu
 	// flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
