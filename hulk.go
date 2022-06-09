@@ -94,8 +94,9 @@ func main() {
 	// flag.StringVar(&site, "site", "https://elmakon.uz/elmakon", "Destination site.")
 
 	//arzoni bizda
+	flag.StringVar(&site, "site", "https://176.9.95.39:8089/driver_candidate_api/v1/settings", "Destination site.")
 	// flag.StringVar(&site, "site", "https://213.230.124.250:3000/driver_candidate_api/v1/settings", "Destination site.")
-	flag.StringVar(&site, "site", "https://www.epam.com/web-accessibility-statement", "Destination site.")
+	// flag.StringVar(&site, "site", "https://www.epam.com/web-accessibility-statement", "Destination site.")
 
 	//hemis adu
 	// flag.StringVar(&site, "site", "https://student.adu.uz/test/exams?semester=14&_pjax=%23test-grid&_pjax=%23test-grid", "Destination site.")
